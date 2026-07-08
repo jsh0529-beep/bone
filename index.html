@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>내 통증 자가체크 퀴즈 | 월성마디안의원</title>
+<meta name="description" content="허리·목·어깨·무릎·손목·발 통증, 지금 병원 가야 할 신호일까? 10문제로 알아보는 근골격계 건강 상식 퀴즈. 월성마디안의원(대구 달서구 정형외과·마취통증의학과)." />
+<meta property="og:title" content="내 통증, 지금 병원 가야 할까? — 근골격계 건강 퀴즈" />
+<meta property="og:description" content="허리·목·어깨·무릎 통증 상식 10문제. 집에서 관리해도 되는 신호 vs 병원 가야 하는 신호를 알려드립니다." />
+<meta property="og:type" content="website" />
+<!-- 배포 후 아래 두 URL의 도메인/경로를 실제 배포 주소로 맞춰주세요 (SNS 미리보기는 절대경로 필요) -->
+<meta property="og:url" content="https://jsh0529-beep.github.io/index.html" />
+<meta property="og:image" content="https://jsh0529-beep.github.io/madian-quiz-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="월성마디안의원 근골격계 건강 자가체크 10문제 퀴즈" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="내 통증, 지금 병원 가야 할까? — 근골격계 건강 퀴즈" />
+<meta name="twitter:description" content="집에서 관리해도 되는 신호 vs 병원 가야 하는 신호, 10문제로 체크." />
+<meta name="twitter:image" content="https://jsh0529-beep.github.io/madian-quiz-cover.png" />
+<link rel="icon" type="image/png" href="madian-quiz-cover.png" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --bg:#EEF3F4; --card:#FFFFFF; --ink:#12303A; --muted:#5C7982;
+    --teal:#0E7C7B; --teal-2:#13A8A0; --teal-ink:#0A5250;
+    --ok:#158F5A; --ok-bg:#E4F5EC; --warn:#D84A2C; --warn-bg:#FCEAE4;
+    --line:#DCE6E8; --shadow:0 10px 40px rgba(14,60,66,.12);
+    --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Malgun Gothic',sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--font); background:var(--bg); color:var(--ink);
+    line-height:1.6; letter-spacing:-.01em;
+    padding-bottom:88px; min-height:100vh;
+    background-image:radial-gradient(1200px 400px at 50% -8%, rgba(19,168,160,.14), transparent 70%);
+  }
+  .wrap{max-width:600px;margin:0 auto;padding:20px 18px 40px}
+
+  /* Header */
+  header{display:flex;align-items:center;gap:10px;padding:6px 2px 18px}
+  .pulse{width:34px;height:20px;flex:none}
+  .pulse path{stroke:var(--teal);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .brand{font-weight:800;font-size:15px;color:var(--teal-ink);letter-spacing:-.02em}
+  .brand small{display:block;font-weight:600;font-size:11.5px;color:var(--muted);letter-spacing:0}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+
+  /* Intro */
+  .intro{padding:30px 24px 26px;text-align:center}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--teal);background:rgba(19,168,160,.12);
+    padding:6px 12px;border-radius:999px;letter-spacing:.02em}
+  h1{font-size:27px;line-height:1.28;margin:16px 0 8px;font-weight:800;letter-spacing:-.03em}
+  h1 .hl{color:var(--teal-ink);position:relative;white-space:nowrap}
+  h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:2px;height:9px;background:rgba(19,168,160,.22);z-index:-1;border-radius:3px}
+  .sub{color:var(--muted);font-size:15px;margin:0 auto;max-width:420px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:20px 0 6px}
+  .chip{font-size:12.5px;font-weight:600;color:var(--teal-ink);background:#EAF6F5;border:1px solid #CDE8E5;
+    padding:6px 11px;border-radius:999px}
+  .disclaim{margin-top:20px;font-size:12px;color:var(--muted);background:#F4F8F8;border:1px dashed var(--line);
+    border-radius:14px;padding:11px 14px;line-height:1.55}
+
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;font-weight:800;
+    border-radius:16px;transition:transform .12s ease, box-shadow .2s ease, background .2s}
+  .btn:active{transform:translateY(1px) scale(.995)}
+  .btn-primary{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-2) 100%);color:#fff;
+    font-size:17px;padding:17px;margin-top:22px;box-shadow:0 8px 22px rgba(14,124,123,.32)}
+  .btn-primary:focus-visible{outline:3px solid var(--teal-2);outline-offset:2px}
+
+  /* Quiz */
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:0 4px}
+  .qcount{font-size:13.5px;font-weight:700;color:var(--muted)}
+  .qcount b{color:var(--teal-ink);font-size:16px}
+  .score-pill{font-size:13px;font-weight:800;color:var(--teal-ink);background:#EAF6F5;border:1px solid #CDE8E5;padding:5px 12px;border-radius:999px}
+  .bar{height:8px;background:#E2ECEE;border-radius:99px;overflow:hidden;margin:0 4px 20px}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-2));border-radius:99px;transition:width .4s cubic-bezier(.3,1,.4,1);width:0}
+
+  .qcard{padding:24px 22px 22px}
+  .cat{display:inline-block;font-size:11.5px;font-weight:800;color:#fff;background:var(--teal);padding:5px 11px;border-radius:8px;letter-spacing:.01em}
+  .qtext{font-size:20px;font-weight:800;line-height:1.42;margin:15px 0 20px;letter-spacing:-.02em}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;font-family:inherit;
+    background:#F7FAFA;border:1.5px solid var(--line);border-radius:15px;padding:16px 16px;font-size:16px;font-weight:700;color:var(--ink);transition:.15s}
+  .opt:hover:not(:disabled){border-color:var(--teal-2);background:#F0F9F8}
+  .opt:focus-visible{outline:3px solid var(--teal-2);outline-offset:2px}
+  .opt .mk{width:26px;height:26px;flex:none;border-radius:8px;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;font-size:14px;font-weight:900;color:var(--muted)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg);color:#0d5a3a}
+  .opt.correct .mk{background:var(--ok);border-color:var(--ok);color:#fff}
+  .opt.wrong{border-color:var(--warn);background:var(--warn-bg);color:#8f2a15}
+  .opt.wrong .mk{background:var(--warn);border-color:var(--warn);color:#fff}
+  .opt:disabled{cursor:default}
+
+  .exp{margin-top:16px;border-radius:15px;padding:15px 16px;font-size:14.5px;line-height:1.6;animation:rise .3s ease}
+  .exp.good{background:var(--ok-bg);border:1px solid #BEE7CF}
+  .exp.bad{background:var(--warn-bg);border:1px solid #F3CDC0}
+  .exp .verdict{font-weight:900;font-size:14px;display:block;margin-bottom:5px}
+  .exp.good .verdict{color:var(--ok)}
+  .exp.bad .verdict{color:var(--warn)}
+  .exp .body{color:#2b4952}
+  .tag-visit{display:inline-block;margin-top:9px;font-size:12px;font-weight:800;padding:4px 10px;border-radius:8px}
+  .tag-visit.hosp{color:#fff;background:var(--warn)}
+  .tag-visit.home{color:#0d5a3a;background:#D3EFDF}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .btn-next{background:var(--teal-ink);color:#fff;font-size:16px;padding:15px;margin-top:16px}
+  .btn-next:focus-visible{outline:3px solid var(--teal-2);outline-offset:2px}
+
+  /* Result */
+  .result{padding:30px 24px 26px;text-align:center}
+  .rscore{font-size:15px;font-weight:700;color:var(--muted)}
+  .rbig{font-size:56px;font-weight:900;letter-spacing:-.04em;color:var(--teal-ink);line-height:1;margin:6px 0 2px}
+  .rbig span{font-size:26px;color:var(--muted)}
+  .rtier{font-size:22px;font-weight:800;margin:16px 0 6px;letter-spacing:-.02em}
+  .rmsg{color:#2b4952;font-size:15px;max-width:430px;margin:0 auto}
+  .redflag{text-align:left;background:#FFF6F3;border:1px solid #F3CDC0;border-radius:16px;padding:16px 18px;margin:22px 0 4px}
+  .redflag h3{margin:0 0 8px;font-size:14px;font-weight:900;color:var(--warn);display:flex;align-items:center;gap:7px}
+  .redflag ul{margin:0;padding-left:18px;color:#7a3423;font-size:13.5px;line-height:1.7}
+  .btn-retry{background:#EAF6F5;color:var(--teal-ink);border:1.5px solid #CDE8E5;font-size:15px;padding:14px;margin-top:18px}
+  .btn-retry:focus-visible{outline:3px solid var(--teal-2);outline-offset:2px}
+  .foot-note{font-size:11.5px;color:var(--muted);margin-top:18px;line-height:1.55}
+
+  /* Hospital intro (result) */
+  .clinic{margin-top:16px;text-align:left;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(14,60,66,.08)}
+  .clinic-hd{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-2) 100%);color:#fff;padding:18px 20px}
+  .clinic-hd .cn{font-size:19px;font-weight:900;letter-spacing:-.02em}
+  .clinic-hd .cs{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.9);margin-top:3px}
+  .clinic-bd{background:#fff;padding:18px 20px 20px}
+  .clinic-slogan{font-size:14.5px;font-weight:700;color:var(--teal-ink);line-height:1.5;margin:0 0 14px}
+  .clinic-sec-t{font-size:11.5px;font-weight:800;color:var(--muted);letter-spacing:.03em;margin:14px 0 8px}
+  .clinic-chips{display:flex;flex-wrap:wrap;gap:7px}
+  .clinic-chips span{font-size:12.5px;font-weight:700;color:var(--teal-ink);background:#EAF6F5;border:1px solid #CDE8E5;padding:5px 10px;border-radius:9px}
+  .clinic-info{margin-top:6px;border-top:1px dashed var(--line);padding-top:14px;display:flex;flex-direction:column;gap:11px}
+  .clinic-row{display:flex;gap:10px;font-size:13.5px;line-height:1.5;color:#2b4952}
+  .clinic-row .ic{flex:none;font-size:15px;width:22px;text-align:center}
+  .clinic-row b{color:var(--ink);font-weight:800}
+  .clinic-row a{color:var(--teal-ink);font-weight:800;text-decoration:none;border-bottom:1.5px solid rgba(14,124,123,.3)}
+  .clinic-cta{display:flex;gap:10px;margin-top:16px}
+  .clinic-cta a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:15px;padding:14px 10px;border-radius:14px;transition:transform .12s}
+  .clinic-cta a:active{transform:translateY(1px)}
+  .cta-call{background:#EAF6F5;color:var(--teal-ink);border:1.5px solid #CDE8E5}
+  .cta-book{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-2) 100%);color:#fff;box-shadow:0 6px 16px rgba(14,124,123,.3)}
+  .clinic-cta a:focus-visible{outline:3px solid var(--teal-2);outline-offset:2px}
+
+  /* Fixed booking banner */
+  .banner{position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:linear-gradient(135deg,var(--teal) 0%,var(--teal-2) 100%);
+    box-shadow:0 -6px 24px rgba(14,60,66,.22);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+  .banner a{max-width:600px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;color:#fff}
+  .banner .bt{font-weight:800;font-size:15px;line-height:1.35}
+  .banner .bt small{display:block;font-weight:600;font-size:11.5px;color:rgba(255,255,255,.85)}
+  .banner .go{flex:none;background:#fff;color:var(--teal-ink);font-weight:900;font-size:14px;padding:11px 18px;border-radius:12px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+  .banner a:active .go{transform:translateY(1px)}
+
+  @media (max-width:400px){ h1{font-size:24px} .qtext{font-size:18px} .rbig{font-size:48px} }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="pulse" viewBox="0 0 60 30" aria-hidden="true"><path d="M1 15 H14 L19 5 L26 25 L33 9 L38 15 H59"/></svg>
+    <div class="brand">월성마디안의원<small>대구 달서구 · 정형외과 · 마취통증의학과</small></div>
+  </header>
+
+  <main id="app"></main>
+</div>
+
+<div class="banner">
+  <a href="https://madian.co.kr" target="_blank" rel="noopener">
+    <span class="bt">통증, 혼자 참지 마세요<small>월성마디안의원 · 정확한 진단부터 비수술 치료까지</small></span>
+    <span class="go">예약하기 →</span>
+  </a>
+</div>
+
+<script>
+/* ---------- 문제은행 (100문항) ----------
+   a: 정답 인덱스(0=맞다, 1=틀리다) / v: 'home' 집에서 관리 성향 · 'hosp' 병원방문 성향 · 'know' 상식
+   e: 해설 (병원 방문 vs 자가관리 안내 포함) */
+const OX = ["⭕ 맞다","❌ 틀리다"];
+const BANK = [
+/* 허리 */
+{c:"허리",q:"갑자기 삐끗한 허리 통증은 대부분 며칠~2주 안에 좋아진다.",o:OX,a:0,v:"home",e:"급성 요통의 상당수는 근육·인대 문제로 자연 호전됩니다. 다만 2주 넘게 지속되거나 다리로 뻗치면 진료를 받아보세요."},
+{c:"허리",q:"허리 디스크가 있으면 무조건 수술을 해야 한다.",o:OX,a:1,v:"home",e:"대부분은 약물·주사·재활 등 비수술 치료로 호전됩니다. 수술은 일부 경우에만 고려합니다."},
+{c:"허리",q:"허리가 아프면 며칠간 꼼짝 않고 침대에 누워 절대안정하는 게 가장 좋다.",o:OX,a:1,v:"home",e:"장기간 절대안정은 오히려 회복을 늦춥니다. 견딜 수 있는 범위에서 활동을 유지하는 편이 좋습니다."},
+{c:"허리",q:"다리가 찌릿하게 뻗치고 발·발가락에 힘이 빠지면 병원 진료가 필요하다.",o:OX,a:0,v:"hosp",e:"방사통+근력저하는 신경 압박 신호일 수 있습니다. 자가관리보다 진료가 우선입니다."},
+{c:"허리",q:"허리 통증과 함께 소변·대변 조절이 안 되면 응급실에 가야 한다.",o:OX,a:0,v:"hosp",e:"마미증후군 등이 의심되는 응급 신호입니다. 지체 없이 병원으로 가세요."},
+{c:"허리",q:"급성 요통 초기엔 냉찜질, 며칠 지난 뒤엔 온찜질이 도움이 될 수 있다.",o:OX,a:0,v:"home",e:"초기 냉찜질로 붓기·통증을 줄이고, 이후 온찜질로 뭉친 근육을 풀어주는 방식이 흔히 권장됩니다."},
+{c:"허리",q:"무거운 물건은 허리를 굽혀서 드는 게 안전하다.",o:OX,a:1,v:"know",e:"무릎을 굽히고 물건을 몸에 붙여 다리 힘으로 드세요. 허리를 굽혀 들면 부담이 커집니다."},
+{c:"허리",q:"오래 앉아 있는 자세는 허리 디스크에 부담을 준다.",o:OX,a:0,v:"know",e:"앉은 자세는 서 있을 때보다 디스크 압력이 높습니다. 30~50분마다 일어나 움직이세요."},
+{c:"허리",q:"요통이 밤에 심해지고 원인 없이 체중이 빠진다면 정밀검사가 필요하다.",o:OX,a:0,v:"hosp",e:"감염·종양 등을 배제해야 하는 위험신호입니다. 반드시 진료받으세요."},
+{c:"허리",q:"복부·등 코어 근력을 키우면 만성 요통 예방에 도움이 된다.",o:OX,a:0,v:"know",e:"코어가 척추를 지지해 재발을 줄여줍니다. 통증이 없을 때 꾸준히 하세요."},
+{c:"허리",q:"젊은 사람에게는 허리 디스크가 생기지 않는다.",o:OX,a:1,v:"know",e:"20~40대에도 흔합니다. 나쁜 자세·무리한 동작이면 나이와 무관하게 생길 수 있습니다."},
+{c:"허리",q:"요통이 있을 때 가벼운 걷기와 스트레칭은 대개 도움이 된다.",o:OX,a:0,v:"home",e:"통증 없는 범위의 가벼운 활동은 회복을 돕습니다. 무리한 동작은 피하세요."},
+{c:"허리",q:"척추관협착증은 걸으면 다리가 저리고 아프다가 쉬면 나아지는 경향이 있다.",o:OX,a:0,v:"know",e:"신경성 파행이 특징입니다. 걷는 거리가 점점 짧아지면 진료를 받아보세요."},
+{c:"허리",q:"허리를 삐끗한 뒤 한쪽 다리가 마비된 느낌이 오면 빨리 병원에 가야 한다.",o:OX,a:0,v:"hosp",e:"신경 손상 가능성이 있어 신속한 진료가 필요합니다."},
+{c:"허리",q:"허리 통증은 자세·생활습관과 전혀 관련이 없다.",o:OX,a:1,v:"know",e:"자세, 앉는 습관, 운동 부족 등이 큰 영향을 줍니다."},
+/* 목 */
+{c:"목",q:"목디스크는 팔·손의 저림이나 힘 빠짐을 일으킬 수 있다.",o:OX,a:0,v:"hosp",e:"목 신경이 눌리면 팔로 증상이 뻗칩니다. 팔 저림·근력저하가 있으면 진료를 받아보세요."},
+{c:"목",q:"고개를 오래 숙여 스마트폰을 보는 습관은 목에 부담을 준다.",o:OX,a:0,v:"know",e:"거북목·일자목의 주원인입니다. 눈높이로 들어 보고 자주 목을 펴세요."},
+{c:"목",q:"목이 뻐근할 때 세게 꺾어 '뚝' 소리를 내는 게 치료에 좋다.",o:OX,a:1,v:"know",e:"권장되지 않습니다. 무리하게 꺾으면 오히려 다칠 수 있어요."},
+{c:"목",q:"자고 일어나 목이 안 돌아가는 '담(사경)'은 대개 며칠 내 좋아진다.",o:OX,a:0,v:"home",e:"온찜질·가벼운 스트레칭으로 지켜볼 수 있습니다. 팔 저림이 동반되거나 오래가면 진료하세요."},
+{c:"목",q:"목 통증과 함께 팔에 힘이 빠지고 물건을 자꾸 떨어뜨리면 진료가 필요하다.",o:OX,a:0,v:"hosp",e:"신경 압박이 진행된 신호일 수 있어 진료가 우선입니다."},
+{c:"목",q:"모니터는 눈높이보다 훨씬 아래에 두는 게 목에 좋다.",o:OX,a:1,v:"know",e:"화면 상단을 눈높이에 맞추는 것이 목 부담을 줄입니다."},
+{c:"목",q:"목 통증이 심한 두통·어지럼과 함께 온다면 진료를 받아보는 게 좋다.",o:OX,a:0,v:"hosp",e:"원인 감별이 필요하므로 참지 말고 진료를 받아보세요."},
+{c:"목",q:"거북목(일자목)은 스트레칭·자세교정으로 관리할 수 있다.",o:OX,a:0,v:"home",e:"초기라면 습관 교정과 스트레칭이 도움이 됩니다. 저림이 생기면 진료하세요."},
+{c:"목",q:"목 베개는 높을수록 무조건 좋다.",o:OX,a:1,v:"know",e:"너무 높으면 목에 부담이 됩니다. 목의 곡선을 자연스럽게 받쳐주는 높이가 좋아요."},
+/* 어깨 */
+{c:"어깨",q:"오십견(유착성 관절낭염)은 어깨가 굳어 팔이 잘 안 올라간다.",o:OX,a:0,v:"hosp",e:"어깨 운동범위 자체가 줄어드는 게 특징입니다. 방치하면 굳으니 진료·치료가 도움이 됩니다."},
+{c:"어깨",q:"오십견은 40~60대에 흔하지만 젊은 사람에게는 절대 생기지 않는다.",o:OX,a:1,v:"know",e:"드물게 젊은 층에도 생길 수 있습니다."},
+{c:"어깨",q:"어깨를 다친 뒤 팔을 전혀 들어올릴 수 없으면 진료가 필요하다.",o:OX,a:0,v:"hosp",e:"회전근개 파열 등을 확인해야 합니다. 참지 말고 진료받으세요."},
+{c:"어깨",q:"어깨 통증은 무조건 참고 안 움직이는 게 회복에 가장 좋다.",o:OX,a:1,v:"home",e:"급성 손상이 아니라면 적절한 스트레칭으로 굳는 것을 막는 게 중요합니다."},
+{c:"어깨",q:"회전근개는 어깨를 움직이고 안정시키는 힘줄·근육 무리다.",o:OX,a:0,v:"know",e:"이 부위가 손상되면 팔을 들거나 돌릴 때 통증·약화가 생깁니다."},
+{c:"어깨",q:"팔을 특정 각도로 올릴 때만 아픈 어깨 통증은 충돌증후군일 수 있다.",o:OX,a:0,v:"hosp",e:"특정 각도에서 힘줄이 끼며 아픈 양상입니다. 반복되면 진료를 받아보세요."},
+{c:"어깨",q:"어깨가 밤에 아파 잠을 깨는 것은 어깨 질환의 흔한 증상이다.",o:OX,a:0,v:"hosp",e:"야간통은 흔한 신호입니다. 수면을 방해할 정도면 진료가 도움이 됩니다."},
+{c:"어깨",q:"무거운 것을 반복해서 머리 위로 드는 동작은 어깨 힘줄에 부담을 준다.",o:OX,a:0,v:"know",e:"반복적인 오버헤드 동작은 회전근개 손상의 원인이 됩니다."},
+/* 무릎 */
+{c:"무릎",q:"계단을 내려갈 때 무릎 앞쪽이 특히 아픈 것은 슬개골 쪽 문제일 수 있다.",o:OX,a:0,v:"home",e:"허벅지 근력을 키우고 무리한 계단·등산을 줄이면 도움이 됩니다. 지속되면 진료하세요."},
+{c:"무릎",q:"무릎 퇴행성관절염은 나이가 들며 연골이 닳아 생긴다.",o:OX,a:0,v:"know",e:"체중관리와 근력운동이 진행을 늦추는 데 도움이 됩니다."},
+{c:"무릎",q:"무릎이 붓고 열이 나며 디딜 수 없을 정도로 아프면 진료가 필요하다.",o:OX,a:0,v:"hosp",e:"감염·심한 손상 가능성을 배제해야 합니다. 빨리 진료받으세요."},
+{c:"무릎",q:"체중을 줄이면 무릎 관절염의 부담이 줄어든다.",o:OX,a:0,v:"home",e:"몸무게 1kg이 무릎엔 몇 배로 실립니다. 체중관리는 확실한 자가관리법입니다."},
+{c:"무릎",q:"무릎이 아프면 무조건 모든 운동을 완전히 끊어야 한다.",o:OX,a:1,v:"home",e:"허벅지(대퇴사두근) 강화 같은 적절한 운동은 오히려 도움이 됩니다."},
+{c:"무릎",q:"쪼그려 앉기나 양반다리는 무릎 관절에 부담을 준다.",o:OX,a:0,v:"know",e:"무릎을 깊게 굽히는 자세는 부담이 큽니다. 의자 생활이 관절에 낫습니다."},
+{c:"무릎",q:"운동 중 '뚝' 소리와 함께 무릎이 붓고 불안정하면 인대·반월판 손상을 의심할 수 있다.",o:OX,a:0,v:"hosp",e:"손상 여부 확인이 필요합니다. 붓기·불안정감이 있으면 진료받으세요."},
+{c:"무릎",q:"만성 무릎 관절통에는 무조건 차게 하는 게 좋다.",o:OX,a:1,v:"home",e:"만성 통증엔 대개 온찜질이 도움이 됩니다. 급성 부종·외상 직후엔 냉찜질입니다."},
+/* 손목·팔꿈치 */
+{c:"손목",q:"손목터널증후군은 엄지·검지·중지의 저림을 유발하며 밤에 심해질 수 있다.",o:OX,a:0,v:"hosp",e:"손 저림이 밤에 심해지고 힘이 빠지면 진료를 받아보세요."},
+{c:"손목",q:"컴퓨터·스마트폰을 많이 쓰면 손목·팔꿈치 통증이 생기기 쉽다.",o:OX,a:0,v:"home",e:"반복 사용이 원인이면 휴식·스트레칭이 우선입니다. 저림·약화가 있으면 진료하세요."},
+{c:"팔꿈치",q:"테니스엘보는 테니스를 치는 사람에게만 생긴다.",o:OX,a:1,v:"know",e:"손목을 반복해서 쓰는 사람이라면 누구나 생길 수 있습니다."},
+{c:"손목",q:"손가락이 '딸깍' 걸리며 잘 안 펴지는 방아쇠수지도 통증 질환이다.",o:OX,a:0,v:"hosp",e:"걸림이 심해지면 진료·주사치료가 도움이 됩니다."},
+{c:"손목",q:"손목이 아플 때는 반복 동작을 줄이고 쉬어주는 게 도움이 된다.",o:OX,a:0,v:"home",e:"우선 휴식·스트레칭으로 관리하고, 저림이 동반되면 진료하세요."},
+/* 발·발목 */
+{c:"발",q:"아침 첫발을 디딜 때 발뒤꿈치가 찌르듯 아픈 것은 족저근막염의 특징이다.",o:OX,a:0,v:"home",e:"종아리·발바닥 스트레칭과 편한 신발이 도움이 됩니다. 오래가면 진료하세요."},
+{c:"발목",q:"발목을 삔 직후에는 RICE(휴식·냉찜질·압박·거상)가 도움이 된다.",o:OX,a:0,v:"home",e:"초기 응급처치로 붓기와 통증을 줄일 수 있습니다."},
+{c:"발목",q:"발목을 심하게 삐어 붓고 체중을 못 실으면 골절 여부를 확인해야 한다.",o:OX,a:0,v:"hosp",e:"디딜 수 없을 정도라면 골절을 배제하기 위해 진료가 필요합니다."},
+{c:"발",q:"하이힐을 자주 신으면 발·발목에 무리가 갈 수 있다.",o:OX,a:0,v:"know",e:"발 앞쪽 압력이 높아지고 발목이 불안정해집니다."},
+{c:"발",q:"족저근막염엔 종아리·발바닥 스트레칭이 도움이 될 수 있다.",o:OX,a:0,v:"home",e:"꾸준한 스트레칭과 발 휴식이 기본 관리입니다."},
+/* 일반·통증관리 */
+{c:"통증상식",q:"통증은 몸이 보내는 경고 신호일 수 있다.",o:OX,a:0,v:"know",e:"'쉬고 치료하라'는 신호입니다. 반복·지속되는 통증은 무시하지 마세요."},
+{c:"통증상식",q:"통증이 2주 이상 지속되거나 점점 심해지면 진료를 받는 게 좋다.",o:OX,a:0,v:"hosp",e:"자가관리에도 낫지 않으면 원인을 확인하는 게 좋습니다."},
+{c:"통증상식",q:"진통제는 오래·자주 먹어도 아무 문제가 없다.",o:OX,a:1,v:"know",e:"위장·신장 등 부작용이 있을 수 있습니다. 반복·장기 복용은 상담이 필요합니다."},
+{c:"통증상식",q:"규칙적인 스트레칭·운동은 근골격계 통증 예방에 도움이 된다.",o:OX,a:0,v:"know",e:"통증이 없을 때 꾸준히 하는 것이 최고의 예방입니다."},
+{c:"통증상식",q:"담배는 디스크·뼈 건강에 나쁜 영향을 줄 수 있다.",o:OX,a:0,v:"know",e:"흡연은 디스크 퇴행과 골밀도 감소를 촉진할 수 있습니다."},
+{c:"골다공증",q:"골다공증은 뼈가 약해져 작은 충격에도 골절이 잘 생기는 병이다.",o:OX,a:0,v:"know",e:"넘어짐만으로도 골절될 수 있어 예방과 검사가 중요합니다."},
+{c:"골다공증",q:"골다공증은 통증 없이 진행되다 골절로 발견되기도 한다.",o:OX,a:0,v:"hosp",e:"'소리 없는 도둑'으로 불립니다. 폐경 후·고령이면 골밀도 검사를 고려하세요."},
+{c:"골다공증",q:"폐경 후 여성은 골다공증 위험이 높아진다.",o:OX,a:0,v:"know",e:"호르몬 변화로 골밀도가 빠르게 줄어듭니다."},
+{c:"통증상식",q:"스트레칭은 반동을 줘서 세게 하는 게 효과적이다.",o:OX,a:1,v:"know",e:"반동 없이 천천히, 통증 없는 범위까지가 안전합니다."},
+{c:"통증상식",q:"뭉쳐서 생긴 근막통증은 스트레칭·온찜질·자세교정으로 완화될 수 있다.",o:OX,a:0,v:"home",e:"우선 자가관리로 풀어보고, 오래가면 물리·도수치료가 도움이 됩니다."},
+{c:"통증상식",q:"통증 부위가 붉게 붓고 열이 나며 몸에 열까지 나면 진료가 필요하다.",o:OX,a:0,v:"hosp",e:"감염 신호일 수 있어 빨리 진료를 받아야 합니다."},
+{c:"통증상식",q:"넘어지거나 부딪힌 뒤 극심한 통증·변형·멍이 있으면 골절을 의심해야 한다.",o:OX,a:0,v:"hosp",e:"외상 후 변형·심한 통증은 골절 가능성이 큽니다. 진료받으세요."},
+{c:"통증상식",q:"마취통증의학과는 신경차단술 등으로 통증을 치료하는 진료과다.",o:OX,a:0,v:"know",e:"약물·주사·시술로 통증 자체를 조절하는 데 특화된 진료과입니다."},
+{c:"통증상식",q:"물리치료·도수치료는 근골격계 통증 관리에 활용된다.",o:OX,a:0,v:"know",e:"약물·주사와 함께 회복을 돕는 대표적인 비수술 치료입니다."},
+{c:"통증상식",q:"통증이 있으면 무조건 누워 있는 게 최선의 치료다.",o:OX,a:1,v:"home",e:"대부분은 적절한 활동이 회복에 도움이 됩니다."},
+{c:"통증상식",q:"나이가 들며 관절·척추가 어느 정도 닳는 것은 자연스러운 변화다.",o:OX,a:0,v:"know",e:"자연스러운 변화지만 증상이 심하면 관리가 필요합니다."},
+{c:"통증상식",q:"오래 서 있는 직업은 허리·다리·발에 부담을 줄 수 있다.",o:OX,a:0,v:"know",e:"자주 자세를 바꾸고 편한 신발을 신는 것이 도움이 됩니다."},
+{c:"통증상식",q:"정확한 진단을 위해 병원에서 진찰·영상검사가 필요할 수 있다.",o:OX,a:0,v:"hosp",e:"같은 통증도 원인이 달라 영상·진찰로 확인이 필요할 수 있습니다."},
+{c:"통증상식",q:"인터넷 검색만으로 내 병을 100% 확진할 수 있다.",o:OX,a:1,v:"hosp",e:"참고는 되지만 확진은 진찰·검사가 필요합니다."},
+{c:"통증상식",q:"같은 부위 통증이라도 원인은 사람마다 다를 수 있다.",o:OX,a:0,v:"hosp",e:"근육·신경·관절 등 원인이 달라 맞춤 진단이 중요합니다."},
+/* 증상별 판단(집 vs 병원) */
+{c:"자가체크",q:"발목을 살짝 삐어 조금 붓고 걷는 데 큰 문제가 없다면, 며칠 냉찜질·휴식으로 지켜볼 수 있다.",o:OX,a:0,v:"home",e:"경미하면 자가관리로 충분할 수 있습니다. 붓기가 심해지거나 못 디디면 진료하세요."},
+{c:"자가체크",q:"허리를 삐끗했지만 다리 저림·힘빠짐 없이 움직일 수 있다면, 며칠 자가관리로 지켜봐도 된다.",o:OX,a:0,v:"home",e:"대개 자연 호전됩니다. 다리 증상이 생기거나 2주 지나도 그대로면 진료하세요."},
+{c:"자가체크",q:"어깨가 며칠 뻐근한 정도라면 스트레칭·휴식으로 먼저 관리해볼 수 있다.",o:OX,a:0,v:"home",e:"가벼운 통증은 자가관리로 시작하고, 팔이 안 올라가거나 야간통이 심하면 진료하세요."},
+{c:"자가체크",q:"자고 나서 목이 뻐근한데 팔 저림이 전혀 없다면 온찜질·스트레칭으로 지켜볼 수 있다.",o:OX,a:0,v:"home",e:"팔로 뻗치는 저림이 없다면 대개 자가관리로 호전됩니다."},
+{c:"자가체크",q:"무릎이 계단에서 살짝 시큰한 정도면 근력운동·체중관리로 먼저 관리해볼 수 있다.",o:OX,a:0,v:"home",e:"초기라면 자가관리가 우선입니다. 붓거나 소리가 나고 불안정하면 진료하세요."},
+{c:"자가체크",q:"손목이 반복 작업 뒤 뻐근하면 우선 휴식·스트레칭으로 관리해도 된다.",o:OX,a:0,v:"home",e:"저림·힘빠짐이 없다면 휴식부터. 저림이 밤에 심하면 진료하세요."},
+{c:"자가체크",q:"갑자기 극심한 통증에 저림·마비·근력저하가 겹치면 자가관리보다 진료가 우선이다.",o:OX,a:0,v:"hosp",e:"신경 손상 신호일 수 있어 곧바로 진료가 필요합니다."},
+{c:"자가체크",q:"3~4일 자가관리에도 통증이 전혀 나아지지 않으면 진료를 고려하는 게 좋다.",o:OX,a:0,v:"hosp",e:"호전이 없으면 원인 확인이 필요합니다."},
+{c:"자가체크",q:"한쪽 팔다리에 갑자기 힘이 빠지고 말이 어눌해지면 즉시 응급실로 가야 한다.",o:OX,a:0,v:"hosp",e:"근골격계가 아닌 뇌졸중 등 응급질환일 수 있어 지체 없이 응급실로 가세요."},
+{c:"자가체크",q:"통증 때문에 잠을 못 자고 일상생활이 어려울 정도면 진료를 받는 게 좋다.",o:OX,a:0,v:"hosp",e:"삶의 질을 크게 떨어뜨리는 통증은 참지 말고 진료받으세요."},
+/* 자세·예방 */
+{c:"자세",q:"의자에 앉을 때 엉덩이를 등받이에 깊숙이 붙이고 허리를 받치는 게 좋다.",o:OX,a:0,v:"know",e:"허리를 지지하면 디스크 부담이 줄어듭니다."},
+{c:"자세",q:"다리를 자주 꼬고 앉으면 골반·척추 균형에 좋지 않을 수 있다.",o:OX,a:0,v:"know",e:"한쪽으로 치우친 자세는 균형을 무너뜨립니다."},
+{c:"자세",q:"무거운 가방을 늘 한쪽 어깨로만 메면 척추 균형에 나쁘다.",o:OX,a:0,v:"know",e:"양쪽을 번갈아 메거나 배낭형이 낫습니다."},
+{c:"운동",q:"걷기는 관절 부담이 적으면서 근골격계 건강에 좋은 운동이다.",o:OX,a:0,v:"know",e:"가장 쉬운 유산소·근력 관리 운동입니다."},
+{c:"운동",q:"준비운동 없이 갑자기 무리한 운동을 하면 부상 위험이 커진다.",o:OX,a:0,v:"know",e:"근육·힘줄을 데운 뒤 운동해야 다치지 않습니다."},
+{c:"운동",q:"수영·아쿠아로빅은 관절 부담이 적어 관절염 환자에게도 권장될 수 있다.",o:OX,a:0,v:"know",e:"물속 운동은 체중 부담을 덜어줍니다."},
+{c:"자세",q:"하루 종일 같은 자세로 있는 것보다 자주 자세를 바꾸는 게 좋다.",o:OX,a:0,v:"know",e:"한 자세 고정은 특정 부위에 부담을 몰아줍니다."},
+{c:"운동",q:"스트레칭은 몸이 굳은 아침보다 몸이 따뜻해진 뒤가 더 안전하다.",o:OX,a:0,v:"know",e:"가벼운 활동 후 근육이 데워진 상태에서 하는 게 안전합니다."},
+{c:"자세",q:"잘 때 너무 푹신한 매트리스는 허리에 좋지 않을 수 있다.",o:OX,a:0,v:"know",e:"척추를 적당히 받쳐주는 매트리스가 좋습니다."},
+{c:"운동",q:"규칙적으로 조금씩 움직여 주는 것이 통증 예방에 좋다.",o:OX,a:0,v:"know",e:"'적당히 자주'가 근골격계 건강의 핵심입니다."},
+/* 개념 */
+{c:"개념",q:"디스크(추간판)는 척추뼈 사이에서 충격을 흡수하는 쿠션 역할을 한다.",o:OX,a:0,v:"know",e:"이 쿠션이 삐져나와 신경을 누르면 '허리디스크'가 됩니다."},
+{c:"개념",q:"흔히 말하는 '허리디스크'는 디스크가 삐져나와 신경을 누르는 상태다.",o:OX,a:0,v:"know",e:"정식 명칭은 추간판탈출증입니다."},
+{c:"개념",q:"방사통은 통증이 신경을 따라 팔·다리로 뻗치는 것을 말한다.",o:OX,a:0,v:"hosp",e:"방사통은 신경 문제 신호일 수 있어 지속되면 진료가 필요합니다."},
+{c:"개념",q:"저림(감각 이상)은 신경이 자극·압박될 때 나타날 수 있다.",o:OX,a:0,v:"hosp",e:"근육통과 달리 신경 증상일 수 있어 심하거나 오래가면 진료하세요."},
+{c:"개념",q:"근육통과 신경통은 원인과 양상이 다를 수 있다.",o:OX,a:0,v:"know",e:"뻐근함(근육)과 찌릿·저림(신경)은 접근이 다릅니다."},
+{c:"통증상식",q:"통증이 오래되면 만성통증으로 굳어져 치료가 더 어려워질 수 있다.",o:OX,a:0,v:"hosp",e:"조기 관리가 중요합니다. 오래 끌지 말고 상담받으세요."},
+{c:"통증상식",q:"체중이 늘면 허리·무릎 등 하중을 받는 관절 부담이 커진다.",o:OX,a:0,v:"know",e:"체중관리는 관절 건강의 기본입니다."},
+{c:"통증상식",q:"충분한 수면과 스트레스 관리도 통증 관리에 영향을 준다.",o:OX,a:0,v:"know",e:"수면·스트레스는 통증 민감도에 영향을 줍니다."},
+{c:"통증상식",q:"같은 통증이라도 방치와 조기치료의 결과는 다를 수 있다.",o:OX,a:0,v:"hosp",e:"빨리 원인을 찾을수록 회복이 쉬운 경우가 많습니다."},
+{c:"통증상식",q:"통증이 걱정된다면 정형외과·마취통증의학과에서 진료·상담을 받는 게 도움이 된다.",o:OX,a:0,v:"hosp",e:"정확한 진단과 비수술 치료 계획을 세우는 데 도움이 됩니다."}
+];
+
+/* ---------- 로직 ---------- */
+const app = document.getElementById('app');
+const PER_GAME = 10;
+let quiz=[], idx=0, score=0, answered=false, visitFlags=0;
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function renderIntro(){
+  app.innerHTML = `
+  <div class="card intro">
+    <span class="kicker">근골격계 건강 자가체크</span>
+    <h1>내 통증, <span class="hl">지금 병원 가야 할까?</span></h1>
+    <p class="sub">허리·목·어깨·무릎·손목·발 통증 상식 10문제.<br>집에서 관리해도 되는 신호와 병원에 가야 하는 신호를 알려드립니다.</p>
+    <div class="chips">
+      <span class="chip">허리·디스크</span><span class="chip">목·거북목</span><span class="chip">오십견·어깨</span>
+      <span class="chip">무릎 관절</span><span class="chip">손목·발</span><span class="chip">통증 상식</span>
+    </div>
+    <div class="disclaim">본 퀴즈는 건강 상식을 위한 <b>교육용</b>이며, 의학적 진단이 아닙니다. 실제 증상은 반드시 의료진의 진찰을 받으세요.</div>
+    <button class="btn btn-primary" id="start">10문제 시작하기</button>
+  </div>`;
+  document.getElementById('start').onclick=startGame;
+}
+
+function startGame(){
+  quiz = shuffle([...BANK]).slice(0,PER_GAME);
+  idx=0; score=0; visitFlags=0;
+  renderQ();
+}
+
+function renderQ(){
+  answered=false;
+  const item=quiz[idx];
+  const pct=(idx)/PER_GAME*100;
+  app.innerHTML=`
+    <div class="topbar">
+      <span class="qcount"><b>${idx+1}</b> / ${PER_GAME}</span>
+      <span class="score-pill">정답 ${score}</span>
+    </div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    <div class="card qcard">
+      <span class="cat">${item.c}</span>
+      <p class="qtext">${item.q}</p>
+      <div class="opts" id="opts">
+        ${item.o.map((t,i)=>`<button class="opt" data-i="${i}"><span class="mk">${i===0?'O':'X'}</span>${t.replace(/^[^\s]+\s/,'')}</button>`).join('')}
+      </div>
+      <div id="feedback"></div>
+    </div>`;
+  requestAnimationFrame(()=>{document.querySelector('.bar > i').style.width=(idx+.15)/PER_GAME*100+'%';});
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(+b.dataset.i,b));
+}
+
+function choose(i,btn){
+  if(answered) return; answered=true;
+  const item=quiz[idx];
+  const correct=(i===item.a);
+  if(correct) score++;
+  if(item.v==='hosp') visitFlags++;
+  document.querySelectorAll('.opt').forEach((b,bi)=>{
+    b.disabled=true;
+    if(bi===item.a) b.classList.add('correct');
+    else if(bi===i) b.classList.add('wrong');
+  });
+  const isHosp=item.v==='hosp', isHome=item.v==='home';
+  const tag = isHosp ? `<span class="tag-visit hosp">🏥 이럴 땐 병원 방문</span>`
+            : isHome ? `<span class="tag-visit home">🏠 우선 집에서 관리 가능</span>` : '';
+  document.getElementById('feedback').innerHTML=`
+    <div class="exp ${correct?'good':'bad'}">
+      <span class="verdict">${correct?'정답이에요! ✅':'아쉬워요 ❌'}</span>
+      <span class="body">${item.e}</span><br>${tag}
+    </div>
+    <button class="btn btn-next" id="next">${idx+1<PER_GAME?'다음 문제 →':'결과 보기 →'}</button>`;
+  document.getElementById('next').onclick=()=>{
+    if(idx+1<PER_GAME){idx++;renderQ();document.querySelector('.wrap').scrollIntoView({behavior:'smooth',block:'start'});}
+    else renderResult();
+  };
+}
+
+function renderResult(){
+  let tier,msg;
+  if(score>=9){tier="근골격계 건강 지식 만렙!";msg="통증 신호를 잘 이해하고 계시네요. 다만 아는 것과 내 몸은 다릅니다. 실제 통증이 있다면 참지 말고 진료로 정확히 확인하세요.";}
+  else if(score>=6){tier="꽤 잘 알고 계세요 👍";msg="기본기는 탄탄합니다. 애매한 부분이 있었다면, 내 통증의 원인은 진찰로 확인하는 게 가장 정확해요.";}
+  else if(score>=3){tier="오해하고 있던 상식이 있네요";msg="잘못 알고 있으면 통증을 키우기 쉽습니다. 지금 아픈 곳이 있다면 자가관리에만 기대지 말고 진료를 받아보세요.";}
+  else {tier="통증 신호, 놓치기 쉬워요 ⚠️";msg="통증은 몸의 경고입니다. 제때 치료하지 못한 통증은 삶의 질을 떨어뜨립니다. 신경 쓰이는 증상이 있다면 진료를 권합니다.";}
+
+  const extra = visitFlags>=4
+    ? `<p class="rmsg" style="margin-top:10px;color:var(--warn);font-weight:700">이번 문제 중 '병원 방문 신호'에 해당하는 항목이 많았어요. 비슷한 증상이 실제로 있다면 진료를 미루지 마세요.</p>`
+    : '';
+
+  app.innerHTML=`
+    <div class="card result">
+      <p class="rscore">10문제 중</p>
+      <div class="rbig">${score}<span>/10</span></div>
+      <h2 class="rtier">${tier}</h2>
+      <p class="rmsg">${msg}</p>
+      ${extra}
+      <div class="redflag">
+        <h3>🚨 이런 신호는 바로 진료하세요</h3>
+        <ul>
+          <li>팔·다리로 뻗치는 저림 + 힘 빠짐(근력저하)</li>
+          <li>대소변 조절 장애, 회음부 감각 저하 → 응급</li>
+          <li>통증 부위 발열·부종 또는 원인 없는 체중감소</li>
+          <li>외상 후 심한 통증·변형, 체중을 실을 수 없음</li>
+          <li>자가관리에도 2주 이상 낫지 않거나 점점 악화</li>
+        </ul>
+      </div>
+      <div class="clinic">
+        <div class="clinic-hd">
+          <div class="cn">월성마디안의원</div>
+          <div class="cs">대구 달서구 · 정형외과 · 마취통증의학과</div>
+        </div>
+        <div class="clinic-bd">
+          <p class="clinic-slogan">우수한 장비와 정확한 진단으로,<br>빠르고 재발 없는 통증 치료를 돕습니다.</p>
+          <div class="clinic-sec-t">진료 분야</div>
+          <div class="clinic-chips">
+            <span>비수술 척추치료</span><span>관절 클리닉</span><span>자세교정 클리닉</span><span>영양주사</span>
+          </div>
+          <div class="clinic-sec-t">치료 방법</div>
+          <div class="clinic-chips">
+            <span>체외충격파</span><span>신경차단술</span><span>도수·운동치료</span><span>증식치료(프롤로)</span><span>관절강내주사</span>
+          </div>
+          <div class="clinic-info">
+            <div class="clinic-row"><span class="ic">📍</span><span>대구광역시 달서구 조암로 29, 이래타워 3층 304·305호</span></div>
+            <div class="clinic-row"><span class="ic">📞</span><span><a href="tel:0536411233">053-641-1233</a></span></div>
+            <div class="clinic-row"><span class="ic">🕒</span><span><b>월·수·금</b> 10:00~19:00 &nbsp;/&nbsp; <b>화·목</b> 10:00~20:30 (야간진료)<br><b>토·일</b> 09:00~14:00 (점심시간 없음) &nbsp;/&nbsp; 평일 점심 13:00~14:00<br>공휴일 휴진</span></div>
+          </div>
+          <div class="clinic-cta">
+            <a class="cta-call" href="tel:0536411233">📞 전화 상담</a>
+            <a class="cta-book" href="https://madian.co.kr" target="_blank" rel="noopener">온라인 예약 →</a>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-retry" id="again">🔄 다른 10문제 다시 풀기</button>
+      <p class="foot-note">본 퀴즈는 교육용 건강 정보이며 진단·치료를 대체하지 않습니다.<br>정확한 진단과 치료는 월성마디안의원에서 상담하세요.</p>
+    </div>`;
+  document.getElementById('again').onclick=()=>{startGame();document.querySelector('.wrap').scrollIntoView({behavior:'smooth',block:'start'});};
+}
+
+renderIntro();
+</script>
+</body>
+</html>
